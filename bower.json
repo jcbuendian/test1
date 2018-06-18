@@ -1,0 +1,14 @@
+{
+  "name": "Polymer-testing",
+  "description": "This app provide any testing forsome testing for learn polymer learni[3~[D",
+  "main": "index.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.0.0",
+    "paper-checkbox": "PolymerElements/paper-checkbox#^2.0.4",
+    "paper-input": "PolymerElements/paper-input#^2.2.2"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  }
+}
