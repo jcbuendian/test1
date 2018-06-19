@@ -1,0 +1,44 @@
+{
+  "name": "simple-dropdown",
+  "version": "1.0.0",
+  "authors": [
+    "Sean King &lt;https://www.twitter.com/seaneking&gt;"
+  ],
+  "description": "Featherweight, style-agnostic dropdown UI component",
+  "keywords": [
+    "web-components",
+    "custom-element",
+    "simple-dropdown"
+  ],
+  "main": "simple-dropdown.html",
+  "license": "MIT",
+  "homepage": "https://github.com/SimpleElements/simple-dropdown/",
+  "demos": {
+    "Demo": "demo/index.html"
+  },
+  "ignore": [
+    "*",
+    "!*.html",
+    "!LICENSE"
+  ],
+  "dependencies": {
+    "polymer": "^2.0.0",
+    "iron-iconset-svg": "PolymerElements/iron-iconset-svg#^2.1.0",
+    "iron-icon": "PolymerElements/iron-icon#^2.0.1",
+    "simple-callout": "SimpleElements/simple-callout#^1.0.0"
+  },
+  "devDependencies": {
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
+    "web-component-tester": "^6.0.0"
+  },
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.0",
+    "commit": "54b1aa4b64cc8742315af091b7506dc17c1f5f75"
+  },
+  "_source": "https://github.com/SimpleElements/simple-dropdown.git",
+  "_target": "^1.0.0",
+  "_originalSource": "SimpleElements/simple-dropdown",
+  "_direct": true
+}

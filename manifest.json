@@ -1,0 +1,7 @@
+{
+  "name": "Examen",
+  "short_name": "Examen",
+  "description": "examen",
+  "start_url": "/",
+  "display": "standalone"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "simple-callout",
+  "version": "1.0.1",
+  "authors": [
+    "Sean King"
+  ],
+  "description": "A lightweight style-agnostic callout bubble, built on Web Components",
+  "keywords": [
+    "web-components",
+    "custom-element",
+    "simple-callout"
+  ],
+  "main": "simple-callout.html",
+  "license": "MIT",
+  "homepage": "https://github.com/SimpleElements/simple-callout/",
+  "demos": {
+    "Demo": "demo/index.html"
+  },
+  "ignore": [
+    "*",
+    "!*.html",
+    "!LICENSE"
+  ],
+  "dependencies": {
+    "polymer": "^2.0.0"
+  },
+  "devDependencies": {
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
+    "web-component-tester": "^6.0.0"
+  },
+  "_release": "1.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.1",
+    "commit": "704c4b84038b085840a3c074939fa6f2164a28b5"
+  },
+  "_source": "https://github.com/SimpleElements/simple-callout.git",
+  "_target": "^1.0.0",
+  "_originalSource": "SimpleElements/simple-callout"
+}

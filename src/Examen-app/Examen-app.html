@@ -1,0 +1,105 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/simple-dropdown/simple-dropdown.html">
+
+
+<dom-module id="examen-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <simple-dropdown origin="top right" label="menu" arrow>
+      <template is="dom-repeat" items="[[list]]" as="column">
+          <a on-click="handleClick">[[column.name]]</a>
+      </template>
+    </simple-dropdown>
+
+    <input type="[[detail.input_type]]" value = "" pattern = "[[detail.pattern]]" name = "[[detail.name]]"/>
+    <p>[[detail.help_url]]</p>
+    <iron-ajax
+        id="getSecond"
+        url="http://labs.docademic.com:3010/api/catalog/country/id/[[code]]"
+        params='{}'
+        handle-as="json"
+        on-response="handleResponseSecond"
+        on-error="handleErrorSecond"
+        debounce-duration="300">
+    </iron-ajax>
+
+    <iron-ajax
+        id="get"
+        url="http://labs.docademic.com:3010/api/catalog/country"
+        params='{}'
+        handle-as="json"
+        on-response="handleResponse"
+        on-error="handleError"
+        debounce-duration="300">
+    </iron-ajax>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class ExamenApp extends Polymer.Element {
+      static get is() { return 'examen-app'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'Examen-app'
+          },
+          list: {
+            type: Array,
+            value: []
+          },
+          code: {
+            type: String,
+            observer: 'search'
+          },
+          detail: {
+            type: String,
+            value: ''
+          }
+        };
+      }
+      
+      search(){
+        console.log(this.code);
+        this.$.getSecond.generateRequest();
+      }
+      
+      handleClick(event){
+        this.code = event.model.__data.column.code;
+      }
+
+      handleResponse(event){
+        let responseEvent = event.detail.response.data;
+        //console.log(responseEvent.countries);
+        this.list = responseEvent.countries;
+      }
+
+      handleResponseSecond(event){
+        let responseEvent = event.detail.response.data;
+        console.log(responseEvent);
+        this.detail = responseEvent.identification;
+      }
+      
+      handleError(event){
+        console.log(event);
+      }
+
+      connectedCallback() {
+        super.connectedCallback();
+        this.$.get.generateRequest();
+        
+      }
+    }
+
+    window.customElements.define(ExamenApp.is, ExamenApp);
+  </script>
+</dom-module>
